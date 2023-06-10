@@ -5,33 +5,33 @@
 class Reputer < Formula
   desc "Vulnerability Import CLI"
   homepage "https://github.com/mchmarny/reputer"
-  version "0.1.1"
+  version "0.1.2"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/mchmarny/reputer/releases/download/v0.1.1/reputer_0.1.1_darwin_all"
-    sha256 "401450b71e1f6f7ce5313b9d79c3654b31b7fd4f784c0a576d19055c38c54c82"
+    url "https://github.com/mchmarny/reputer/releases/download/v0.1.2/reputer_0.1.2_darwin_all"
+    sha256 "98116b1d424ddb7d12e1e933569a0fca324a19cfa928e4a13b079f17b19b547d"
 
     def install
-      bin.install "reputer_0.1.1_darwin_all" => "reputer"
+      bin.install "reputer_0.1.2_darwin_all" => "reputer"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mchmarny/reputer/releases/download/v0.1.1/reputer_0.1.1_linux_amd64"
-      sha256 "b5ff319145ed817005390eae3d1f1e2fe4ca9e1c8d33a958e02c6a790be3452e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mchmarny/reputer/releases/download/v0.1.2/reputer_0.1.2_linux_arm64"
+      sha256 "e3ea7c2162f30c67b0290d813a7db7db099883fc1f1fd67c7a350ca8fd428243"
 
       def install
-        bin.install "reputer_0.1.1_linux_amd64" => "reputer"
+        bin.install "reputer_0.1.2_linux_arm64" => "reputer"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mchmarny/reputer/releases/download/v0.1.1/reputer_0.1.1_linux_arm64"
-      sha256 "30253789d563d308db0b952378e6f6f3eaccf85ebddb3a607bcb1acbbc27a2d8"
+    if Hardware::CPU.intel?
+      url "https://github.com/mchmarny/reputer/releases/download/v0.1.2/reputer_0.1.2_linux_amd64"
+      sha256 "3b5141078320f5cba4b7c1e6be35de5efaab6550f268d8997182d021c495c98e"
 
       def install
-        bin.install "reputer_0.1.1_linux_arm64" => "reputer"
+        bin.install "reputer_0.1.2_linux_amd64" => "reputer"
       end
     end
   end
