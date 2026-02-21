@@ -5,31 +5,31 @@
 class Reputer < Formula
   desc "CLI tool to calculate contributor reputation from Git providers"
   homepage "https://github.com/mchmarny/reputer"
-  version "0.3.1"
+  version "0.3.2"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/mchmarny/reputer/releases/download/v0.3.1/reputer_0.3.1_darwin_all"
-    sha256 "46260295707409b015cd1ddbeb048799e7063cfc04fc2e6ec05e99f941bab847"
+    url "https://github.com/mchmarny/reputer/releases/download/v0.3.2/reputer_0.3.2_darwin_all"
+    sha256 "842ca50d3ab49a970436213863b3e25ee85ec811373220fa072568d7fddfa493"
 
     def install
-      bin.install "reputer_0.3.1_darwin_all" => "reputer"
+      bin.install "reputer_0.3.2_darwin_all" => "reputer"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mchmarny/reputer/releases/download/v0.3.1/reputer_0.3.1_linux_amd64"
-      sha256 "c62aea503e4f76a4cd7c69707591e3f8b7273de62f3b495aa1fe063920ae478f"
+      url "https://github.com/mchmarny/reputer/releases/download/v0.3.2/reputer_0.3.2_linux_amd64"
+      sha256 "f3af0c992ba3167d0bf06ab870aa615d7b20b6aca8d4dac95e4f1b221481d0b5"
       def install
-        bin.install "reputer_0.3.1_linux_amd64" => "reputer"
+        bin.install "reputer_0.3.2_linux_amd64" => "reputer"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mchmarny/reputer/releases/download/v0.3.1/reputer_0.3.1_linux_arm64"
-      sha256 "28a5763b5e270ba1efa271076a0e77ef76c17f0f0674797e5d8b8974a0a721d3"
+      url "https://github.com/mchmarny/reputer/releases/download/v0.3.2/reputer_0.3.2_linux_arm64"
+      sha256 "2a924c4058795159735889392932d8c06e6c1e11eb987d7d7c1bc97f9d4e4d6e"
       def install
-        bin.install "reputer_0.3.1_linux_arm64" => "reputer"
+        bin.install "reputer_0.3.2_linux_arm64" => "reputer"
       end
     end
   end
